@@ -1,0 +1,77 @@
+{% extends "templatesApp1/base.html" %} {% block content %} {% load static %}
+<h1 class="alert alert-success display-1 text-center">Lista de Productos</h1>
+{% if productos %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>NOMBRE</th>
+      <th>DESCRIPCION</th>
+      <th>PRECIO</th>
+      <th>CATEGORIA</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for producto in productos %}
+    <tr>
+      <td scope="row">{{ producto.id_producto }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>{{ producto.categoria }}</td>
+      <td>
+        <a
+          href="{% url 'actualizar_producto' producto.id_producto %}"
+          data-bs-toggle="tooltip"
+          data-bs-title="Actualizar"
+        >
+          <img
+            class="bg-warning"
+            width="24px"
+            height="24px"
+            src="{% static 'images/edit-1.svg' %}"
+            alt="Editar producto"
+          />
+        </a>
+      </td>
+      <td>
+        <a
+          href="{% url 'eliminar_producto' producto.id_producto %}"
+          data-bs-toggle="tooltip"
+          data-bs-title="Eliminar"
+        >
+          <img
+            class="bg-danger"
+            width="24px"
+            height="24px"
+            src="{% static 'images/delete-remove-fill.svg' %}"
+            alt="Eliminar producto"
+          />
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">No hay productos</div>
+{% endif %}
+
+<a class="text-white" href="{% url 'agregar_producto' %}"
+  ><button class="btn btn-primary mb-3">Agregar Producto</button>
+</a>
+
+<p><a href="{% url 'menu_principal' %}">Volver al menu principal</a></p>
+
+<style>
+  table tr td img {
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0.25rem;
+    margin: -0.25rem;
+    border-radius: 50%;
+  }
+</style>
+{% endblock %}

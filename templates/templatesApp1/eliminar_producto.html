@@ -1,0 +1,14 @@
+{% extends "templatesApp1/base.html" %} {% block content %}
+<h1 class="alert alert-success display-1 text-center">Eliminar Producto</h1>
+<form method="post" class="mb-3 px-3 shadow py-4 rounded-2">
+  <p>
+    ¿Estás seguro de que deseas eliminar el producto "{{ producto.nombre }}"?
+  </p>
+
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary">Sí, eliminar</button>
+</form>
+<a href="{% url 'lista_productos' %}"
+  >Cancelar y volver a la lista de productos</a
+>
+{% endblock %}

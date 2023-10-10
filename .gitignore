@@ -1,0 +1,57 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Django
+*.pyc
+*.pyo
+db.sqlite3
+.env
+
+# Entorno virtual
+venv/
+.env/
+
+# Configuración de IDE
+.idea/
+
+# Archivos de compilación
+*.pyc
+*.pyo
+
+# Archivos de registro y temporales
+*.log
+*.pot
+*.bak
+*.swp
+*.tmp
+*.DS_Store
+
+# Carpetas generadas
+staticfiles/
+media/
+
+# Migraciones
+*/migrations/
+
+# Configuración local
+local_settings.py
+
+# Carpetas y archivos de prueba
+__tests__/
+tests/
+
+# Archivo de bloqueo para migraciones
+db.sqlite3.lock
+
+# Carpetas de herramientas
+.vscode/
+.sublime-workspace
+
+# Carpetas de resultados
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# Carpeta de compilación de JavaScript
+*.js
