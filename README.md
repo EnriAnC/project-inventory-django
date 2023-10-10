@@ -1,6 +1,6 @@
 # Proyecto Inventario de Productos - Inacap
 
-Este es un proyecto Backend de Inventario de Producto desarrollado con Python y Django.
+Este es un proyecto web de Inventario de Productos desarrollado con Python y Django.
 
 ## Instalación
 
